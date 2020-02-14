@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <bean id="personCat" class="spring1.sp.entities.Cat" >
+        <constructor-arg name="name" value="mitsi" />
+    </bean>
+
+    <bean id="jojo" class="spring1.sp.entities.Person">
+        <constructor-arg index="0" value="Jojo"/>
+        <constructor-arg index="1" value="76"/>
+        <constructor-arg index="2" ref="personCat" />
+    </bean>
+
+    <bean id="halastra" class="spring1.sp.entities.Person">
+        <constructor-arg index="1" value="102" />
+        <constructor-arg index="0" value="Halastra" />
+        <constructor-arg index="2" ref="personCat" />
+    </bean>
+
+    <bean id="nameParams" class="spring1.sp.entities.Person">
+        <constructor-arg name="name" value="gargamel" />
+        <constructor-arg name="age" value="990" />
+        <constructor-arg name="cat" ref="personCat" />
+    </bean>
+
+    <bean id="dudu" class="spring1.sp.entities.Person">
+        <property name="name" value="dudu" />
+        <property name="age" value="12" />
+    </bean>
+
+</beans>
